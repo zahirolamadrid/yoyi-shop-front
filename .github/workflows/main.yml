@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.email "zahirolamadridalmeida@gmail.com"
+          git config --global user.name "Zahiro Lamadrid"
+          echo "node_modules/" >> .gitignore
+          echo ".next/" >> .gitignore
+          git add .gitignore
+          git commit -m "GitHub Pages deploy ignore"
+          git branch -m main
+          git checkout -b gh-pages
+          mv out/* .
+          git add .
+          git commit -m "Deploy Next.js to GitHub Pages"
+          git push -f origin gh-pages
