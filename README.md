@@ -9,7 +9,7 @@ Este es un proyecto colaborativo para el desarrollo del sitio web de ventas de p
 ## Clonar el proyecto desde GitHub
 Comienza clonando el repositorio de GitHub que contiene el proyecto de Node.js en tu máquina local. Abre una terminal y navega al directorio donde deseas guardar el proyecto. Luego, utiliza el comando `git clone` seguido de la URL del repositorio:
 
-```console
+```bash
 git clone https://github.com/zahirolamadrid/yoyi-shop-front.git
 ```
 Esto creará una carpeta con el nombre del proyecto
@@ -20,7 +20,16 @@ Ingresa al directorio del proyecto clonado usando el comando cd:
 cd yoyi-shop-front
 ```
 ## Instalar dependencias
+Se instalan las dependencias con el comando:
+```javascript
+npm install
+```
 ## Ejecutar el proyecto
+Ejecutas el proyecto con el siguiente comando
+```bash
+npm run dev
+```
+
 # Como usar el proyecto
 # Creditos
 # Licencias
