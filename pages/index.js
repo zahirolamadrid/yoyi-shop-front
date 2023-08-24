@@ -1,6 +1,12 @@
 import { useState } from 'react';
+import Link from 'next/link';
+
 function Header({ title }) {
-  return <h1>{title ? title : 'Default title'}</h1>;
+  return <h1 className="title">
+    {
+      title ? title : <a href="https://nextjs.org">Next.js!</a>
+    }
+  </h1>;
 }
 
 export default function HomePage() {
@@ -15,6 +21,10 @@ export default function HomePage() {
   return (
     <div>
       <Header title="Develop. Preview. Ship. 🚀" />
+      <Header />
+      <h1 className="title">
+        Read <Link href="/posts/first-post">this page!</Link>
+      </h1>
       <ul>
         {names.map((name) => (
           <li key={name}>{name}</li>
